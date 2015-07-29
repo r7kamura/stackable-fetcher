@@ -7,7 +7,7 @@ var Fetcher = require('stackable-fetcher');
 var fetcher = new Fetcher();
 fetcher
   .get('https://github.com/')
-  .then(function(res) { return res.text(); })
+  .then(function(response) { return response.text(); })
   .then(function(body) { console.log(body); });
 ```
 
