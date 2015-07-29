@@ -8,6 +8,6 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('jsdoc', function () {
-  return gulp.src(["./lib/**/*.js", "README.md"])
+  return gulp.src(["./src/**/*.js", "README.md"])
     .pipe(jsdoc('./docs'));
 });
