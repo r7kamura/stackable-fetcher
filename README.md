@@ -12,6 +12,7 @@ fetcher
 ```
 
 ## API
+- `new Fetcher()`
 - `Fetcher#delete(url, body, headers) -> Promise`
 - `Fetcher#get(url, body, headers) -> Promise`
 - `Fetcher#head(url, body, headers) -> Promise`
