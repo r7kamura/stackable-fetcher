@@ -9,7 +9,7 @@ A middleware-based HTTP client library.
 
 ## Install
 ```
-npm install stackable-fetcher
+npm install --save-dev stackable-fetcher
 ```
 
 ## Usage
