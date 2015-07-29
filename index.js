@@ -1,1 +1,1 @@
-module.exports = require('./lib/stackable-fetcher/fetcher');
+module.exports = require('./lib/fetcher');
