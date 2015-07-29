@@ -1,0 +1,7 @@
+{
+  "name": "stackable-fetcher",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "r7kamura/stackable-fetcher",
+  "license": "MIT"
+}
