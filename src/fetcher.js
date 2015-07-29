@@ -1,7 +1,12 @@
 var fetch = require('node-fetch');
 
 /**
- * @constructor
+ * @class An HTTP Client
+ * @property {Array.<object>}
+ * @example
+ * new Fetcher().get('https://github.com').then(function (response) {
+ *   console.log(response.status);
+ * });
  */
 var Fetcher = function() {
   this.middlewares = [];
