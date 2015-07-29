@@ -23,49 +23,56 @@
 
 
 
+
 <section>
 
 <header>
-    <h2>
-    Fetcher
-    </h2>
     
-        <div class="class-description">An HTTP Client</div>
+        <h2>
+        Fetcher
+        </h2>
+        
+            <div class="class-description">An HTTP Client</div>
+        
     
 </header>
 
 <article>
     <div class="container-overview">
     
+        
 
     
-        
-<dt>
+    <h2>Constructor</h2>
+    
+
     <h4 class="name" id="Fetcher"><span class="type-signature"></span>new Fetcher<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
-</dt>
-<dd>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
 
     
-
-    
-
-    
-
-    
-
-    
-<dl class="details">
-    
-
-        <h5 class="subsection-title">Properties:</h5>
-
-        <dl>
 
 <table class="props">
     <thead>
     <tr>
+        
+        <th>Name</th>
         
 
         <th>Type</th>
@@ -82,6 +89,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>middlewares</code></td>
             
 
             <td class="type">
@@ -102,7 +111,18 @@
 
     
     </tbody>
-</table></dl>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
 
     
 
@@ -137,27 +157,26 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
+
+
+
+
+
+
+
+    <h5>Example</h5>
     
-        <h5>Example</h5>
-        
     <pre class="prettyprint"><code>new Fetcher().get('https://github.com').then(function (response) {
   console.log(response.status);
 });</code></pre>
 
-    
-</dd>
+
 
     
     </div>
@@ -168,7 +187,7 @@
 
     
 
-    
+     
 
     
 
@@ -177,34 +196,39 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        <dl>
-            
-<dt>
-    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-</dt>
-<dd>
-
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
         
+            
+
+    
+
+    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">(url, body<span class="signature-attributes">opt</span>, headers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -217,6 +241,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -246,6 +272,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -278,6 +306,8 @@
 
         <tr>
             
+                <td class="name"><code>headers</code></td>
+            
 
             <td class="type">
             
@@ -308,10 +338,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -345,20 +385,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -373,39 +413,43 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-</dt>
-<dd>
 
     
 
-    
+    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(url, body<span class="signature-attributes">opt</span>, headers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -418,6 +462,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -447,6 +493,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -479,6 +527,8 @@
 
         <tr>
             
+                <td class="name"><code>headers</code></td>
+            
 
             <td class="type">
             
@@ -509,10 +559,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -546,20 +606,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -574,39 +634,43 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="head"><span class="type-signature"></span>head<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-</dt>
-<dd>
 
     
 
-    
+    <h4 class="name" id="head"><span class="type-signature"></span>head<span class="signature">(url, body<span class="signature-attributes">opt</span>, headers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -619,6 +683,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -648,6 +714,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -680,6 +748,8 @@
 
         <tr>
             
+                <td class="name"><code>headers</code></td>
+            
 
             <td class="type">
             
@@ -710,10 +780,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -747,20 +827,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -775,39 +855,43 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="options"><span class="type-signature"></span>options<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-</dt>
-<dd>
 
     
 
-    
+    <h4 class="name" id="options"><span class="type-signature"></span>options<span class="signature">(url, body<span class="signature-attributes">opt</span>, headers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -820,6 +904,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -849,6 +935,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -881,6 +969,8 @@
 
         <tr>
             
+                <td class="name"><code>headers</code></td>
+            
 
             <td class="type">
             
@@ -911,10 +1001,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -948,20 +1048,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -976,39 +1076,43 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="patch"><span class="type-signature"></span>patch<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-</dt>
-<dd>
 
     
 
-    
+    <h4 class="name" id="patch"><span class="type-signature"></span>patch<span class="signature">(url, body<span class="signature-attributes">opt</span>, headers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -1021,6 +1125,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -1050,6 +1156,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -1082,6 +1190,8 @@
 
         <tr>
             
+                <td class="name"><code>headers</code></td>
+            
 
             <td class="type">
             
@@ -1112,10 +1222,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -1149,20 +1269,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -1177,39 +1297,43 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="post"><span class="type-signature"></span>post<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-</dt>
-<dd>
 
     
 
-    
+    <h4 class="name" id="post"><span class="type-signature"></span>post<span class="signature">(url, body<span class="signature-attributes">opt</span>, headers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -1222,6 +1346,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -1251,6 +1377,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -1283,6 +1411,8 @@
 
         <tr>
             
+                <td class="name"><code>headers</code></td>
+            
 
             <td class="type">
             
@@ -1313,10 +1443,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -1350,20 +1490,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -1378,39 +1518,43 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="put"><span class="type-signature"></span>put<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
-
-    
-</dt>
-<dd>
 
     
 
-    
+    <h4 class="name" id="put"><span class="type-signature"></span>put<span class="signature">(url, body<span class="signature-attributes">opt</span>, headers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -1423,6 +1567,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -1452,6 +1598,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>body</code></td>
             
 
             <td class="type">
@@ -1484,6 +1632,8 @@
 
         <tr>
             
+                <td class="name"><code>headers</code></td>
+            
 
             <td class="type">
             
@@ -1514,10 +1664,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -1551,20 +1711,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -1579,39 +1739,43 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
+
+
 
         
             
-<dt>
-    <h4 class="name" id="use"><span class="type-signature"></span>use<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Fetcher.html">Fetcher</a>}</span></h4>
-
-    
-</dt>
-<dd>
 
     
 
-    
+    <h4 class="name" id="use"><span class="type-signature"></span>use<span class="signature">(middleware, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Fetcher.html">Fetcher</a>}</span></h4>
 
     
 
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
     
-        <h5>Parameters:</h5>
-        
 
 <table class="params">
     <thead>
     <tr>
         
+        <th>Name</th>
+        
 
         <th>Type</th>
 
         
-        <th>Argument</th>
+        <th>Attributes</th>
         
 
         
@@ -1624,6 +1788,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>middleware</code></td>
             
 
             <td class="type">
@@ -1653,6 +1819,8 @@
     
 
         <tr>
+            
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
@@ -1684,10 +1852,20 @@
     
     </tbody>
 </table>
+
+
+
+
+
+
+<dl class="details">
+
     
 
     
-<dl class="details">
+
+    
+
     
 
     
@@ -1721,20 +1899,20 @@
 </dl>
 
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
-    <h5>Returns:</h5>
-    
-            
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -1749,12 +1927,11 @@
     </dd>
 </dl>
 
-        
-
     
-</dd>
 
-        </dl>
+
+
+        
     
 
     
@@ -1770,13 +1947,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="Fetcher.html">Fetcher</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Fetcher.html">Fetcher</a></li></ul>
 </nav>
 
-<br clear="both">
+<br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Thu Jul 30 2015 02:14:46 GMT+0900 (JST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Thu Jul 30 2015 02:20:59 GMT+0900 (JST)
 </footer>
 
 <script> prettyPrint(); </script>
