@@ -1,6 +1,13 @@
 # stackable-fetcher
 A middleware-based HTTP client library.
 
+- [Install](#install)
+- [Usage](#usage)
+- [API](#api)
+- [Middleware](#middleware)
+  - [Specs](#specs)
+  - [Example](#example)
+
 ## Install
 ```
 npm install stackable-fetcher
