@@ -14,6 +14,8 @@ npm install stackable-fetcher
 ```
 
 ## Usage
+See [docs](http://r7kamura.github.io/stackable-fetcher/) for more details.
+
 ```js
 var Fetcher = require('stackable-fetcher');
 var fetcher = new Fetcher();
@@ -22,17 +24,6 @@ fetcher
   .then(function(response) { return response.text(); })
   .then(function(body) { console.log(body); });
 ```
-
-## API
-- `new Fetcher()`
-- `Fetcher#delete(url, body, headers) -> Promise`
-- `Fetcher#get(url, body, headers) -> Promise`
-- `Fetcher#head(url, body, headers) -> Promise`
-- `Fetcher#options(url, body, headers) -> Promise`
-- `Fetcher#patch(url, body, headers) -> Promise`
-- `Fetcher#post(url, body, headers) -> Promise`
-- `Fetcher#put(url, body, headers) -> Promise`
-- `Fetcher#use(middleware, options) -> Fetcher`
 
 ## Middleware
 stackable-fetcher is easily extended via middleware stack.
