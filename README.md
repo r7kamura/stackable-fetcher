@@ -1,6 +1,11 @@
 # stackable-fetcher
 A middleware-based HTTP client library.
 
+## Install
+```
+npm install stackable-fetcher
+```
+
 ## Usage
 ```js
 var Fetcher = require('stackable-fetcher');
