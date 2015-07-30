@@ -8,6 +8,7 @@ var Request = require('./request')
  * @example
  * new Fetcher().get('https://github.com').then(function (response) {
  *   console.log(response.status);
+ *   return response;
  * });
  */
 var Fetcher = function() {
