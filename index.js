@@ -1,1 +1,1 @@
-module.exports = require('./lib/fetcher');
+module.exports = require('./src/fetcher');
