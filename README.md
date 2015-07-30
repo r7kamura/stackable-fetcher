@@ -34,8 +34,8 @@ stackable-fetcher is easily extended via middleware stack.
 See [examples](/examples) for example middlewares.
 
 ```js
-new Fetcher();
+new Fetcher()
   .use(RequestLogger)
   .use(ResponseLogger)
-  .get('https://api.github.com/users/r7kamura')
+  .get('https://api.github.com/users/r7kamura');
 ```
