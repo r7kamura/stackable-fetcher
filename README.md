@@ -38,16 +38,16 @@ This is a small example that defines logger middlewares.
 var RequestLogger = function (application) {
   this.application = application;
 };
-RequestLogger.prototype.call = function (request) {
-  console.log(request.method);
-  return this.application.call(request);
+RequestLogger.prototype.call = function (environment) {
+  console.log(environment.method);
+  return this.application.call(environment);
 };
 
 var ResponseLogger = function (application) {
   this.application = application;
 };
-ResponseLogger.prototype.call = function (request) {
-  return this.application.call(request).then(function (response) {
+ResponseLogger.prototype.call = function (environment) {
+  return this.application.call(environment).then(function (response) {
     console.log(response.status);
   });
 };

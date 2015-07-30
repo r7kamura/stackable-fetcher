@@ -3,6 +3,7 @@ var Request = require('./request')
 
 /**
  * @class An HTTP Client
+ * @property {object} adapter
  * @property {Array.<object>} middlewares
  * @example
  * new Fetcher().get('https://github.com').then(function (response) {
@@ -10,6 +11,18 @@ var Request = require('./request')
  * });
  */
 var Fetcher = function() {
+  this.adapter = {
+    call: function (environment) {
+      return fetch(
+        environment.url,
+        {
+          body: environment.body,
+          headers: environment.headers,
+          method: environment.method
+        }
+      );
+    }
+  };
   this.middlewares = [];
 };
 
@@ -99,7 +112,7 @@ Fetcher.prototype.use = function(middleware, options) {
  * @return {object}
  */
 Fetcher.prototype._buildApplication = function(request) {
-  var application = this._getRootApplication();
+  var application = this.adapter;
   var i = this.middlewares.length;
   while (i--) {
     application = new this.middlewares[i].middleware(
@@ -112,39 +125,11 @@ Fetcher.prototype._buildApplication = function(request) {
 
 /**
  * @private
- * @param {object}
- * @return {Promise}
- */
-Fetcher.prototype._fetch = function(request) {
-  return fetch(
-    request.url,
-    {
-      headers: request.headers,
-      method: request.method
-    }
-  );
-};
-
-/**
- * @private
  * @return {object}
  */
 Fetcher.prototype._getApplication = function() {
   this._application = this._application || this._buildApplication();
   return this._application;
-};
-
-/**
- * @private
- * @return {object}
- */
-Fetcher.prototype._getRootApplication = function() {
-  var self = this;
-  return {
-    call: function(request) {
-      return self._fetch(request);
-    }
-  };
 };
 
 /**
