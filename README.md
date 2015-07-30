@@ -49,6 +49,7 @@ var ResponseLogger = function (application) {
 ResponseLogger.prototype.call = function (environment) {
   return this.application.call(environment).then(function (response) {
     console.log(response.status);
+    return response;
   });
 };
 
