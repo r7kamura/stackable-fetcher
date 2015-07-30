@@ -14,32 +14,32 @@ var Fetcher = function() {
 
 /**
  * @param {string}
- * @param {*=}
+ * @param {object=}
  * @param {object=}
  * @return {Promise}
  */
-Fetcher.prototype.delete = function(url, body, headers) {
-  return this._process('DELETE', url, body, headers);
+Fetcher.prototype.delete = function(url, parameters, headers) {
+  return this._process('DELETE', url, null, headers, parameters);
 };
 
 /**
  * @param {string}
- * @param {*=}
+ * @param {object=}
  * @param {object=}
  * @return {Promise}
  */
-Fetcher.prototype.get = function(url, body, headers) {
-  return this._process('GET', url, body, headers);
+Fetcher.prototype.get = function(url, parameters, headers) {
+  return this._process('GET', url, null, headers, parameters);
 };
 
 /**
  * @param {string}
- * @param {*=}
+ * @param {object=}
  * @param {object=}
  * @return {Promise}
  */
-Fetcher.prototype.head = function(url, body, headers) {
-  return this._process('HEAD', url, body, headers);
+Fetcher.prototype.head = function(url, parameters, headers) {
+  return this._process('HEAD', url, null, headers, parameters);
 };
 
 /**
@@ -150,16 +150,18 @@ Fetcher.prototype._getRootApplication = function() {
  * @private
  * @param {string}
  * @param {string}
- * @param {*=}
+ * @param {string=}
+ * @param {object=}
  * @param {object=}
  * @return {Promise}
  */
-Fetcher.prototype._process = function(method, url, body, headers) {
+Fetcher.prototype._process = function(method, url, body, headers, parameters) {
   return this._getApplication().call(
     {
+      body: body,
       headers: headers,
       method: method,
-      body: body,
+      parameters: parameters,
       url: url
     }
   );
