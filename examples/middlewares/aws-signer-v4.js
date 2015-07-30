@@ -1,4 +1,4 @@
-var Sign = require('./sign')
+var Sign = require('aws-signer-v4')
 var url = require('url');
 
 /**
