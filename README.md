@@ -1,5 +1,5 @@
 # stackable-fetcher
-A middleware-based HTTP client library.
+A middleware-based HTTP client library based on [node-fetch](https://github.com/bitinn/node-fetch).
 
 - [Install](#install)
 - [Usage](#usage)
