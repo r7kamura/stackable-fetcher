@@ -19,7 +19,7 @@ var Fetcher = function() {
  * @return {Promise}
  */
 Fetcher.prototype.delete = function(url, body, headers) {
-  return this._process('DELETE', body, headers);
+  return this._process('DELETE', url, body, headers);
 };
 
 /**
@@ -39,7 +39,7 @@ Fetcher.prototype.get = function(url, body, headers) {
  * @return {Promise}
  */
 Fetcher.prototype.head = function(url, body, headers) {
-  return this._process('HEAD', body, headers);
+  return this._process('HEAD', url, body, headers);
 };
 
 /**
@@ -49,7 +49,7 @@ Fetcher.prototype.head = function(url, body, headers) {
  * @return {Promise}
  */
 Fetcher.prototype.options = function(url, body, headers) {
-  return this._process('OPTIONS', body, headers);
+  return this._process('OPTIONS', url, body, headers);
 };
 
 /**
@@ -59,7 +59,7 @@ Fetcher.prototype.options = function(url, body, headers) {
  * @return {Promise}
  */
 Fetcher.prototype.patch = function(url, body, headers) {
-  return this._process('PATCH', body, headers);
+  return this._process('PATCH', url, body, headers);
 };
 
 /**
@@ -69,7 +69,7 @@ Fetcher.prototype.patch = function(url, body, headers) {
  * @return {Promise}
  */
 Fetcher.prototype.post = function(url, body, headers) {
-  return this._process('POST', body, headers);
+  return this._process('POST', url, body, headers);
 };
 
 /**
@@ -79,7 +79,7 @@ Fetcher.prototype.post = function(url, body, headers) {
  * @return {Promise}
  */
 Fetcher.prototype.put = function(url, body, headers) {
-  return this._process('PUT', body, headers);
+  return this._process('PUT', url, body, headers);
 };
 
 /**
