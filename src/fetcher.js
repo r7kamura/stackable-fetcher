@@ -1,8 +1,9 @@
 var fetch = require('node-fetch');
+var Request = require('./request')
 
 /**
  * @class An HTTP Client
- * @property {Array.<object>}
+ * @property {Array.<object>} middlewares
  * @example
  * new Fetcher().get('https://github.com').then(function (response) {
  *   console.log(response.status);
@@ -157,13 +158,15 @@ Fetcher.prototype._getRootApplication = function() {
  */
 Fetcher.prototype._process = function(method, url, body, headers, parameters) {
   return this._getApplication().call(
-    {
-      body: body,
-      headers: headers,
-      method: method,
-      parameters: parameters,
-      url: url
-    }
+    new Request(
+      {
+        body: body,
+        headers: headers,
+        method: method,
+        parameters: parameters,
+        url: url
+      }
+    ).toEnvironment()
   );
 };
 
