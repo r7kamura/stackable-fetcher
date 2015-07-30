@@ -30,6 +30,7 @@ Request.prototype.toEnvironment = function () {
 };
 
 /**
+ * @private
  * @return {string}
  */
 Request.prototype._getUrl = function () {
