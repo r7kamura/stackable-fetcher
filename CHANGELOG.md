@@ -1,5 +1,8 @@
+## v0.1.3
+- Add RejectLogger middleware
+
 ## v0.1.2
-- Add JsonResponseDecoder
+- Add JsonResponseDecoder middleware
 
 ## v0.1.1
 - Add JsonRequestEncoder middleware
