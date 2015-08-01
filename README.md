@@ -16,7 +16,7 @@ npm install --save-dev stackable-fetcher
 See [docs](http://r7kamura.github.io/stackable-fetcher/) for more details.
 
 ```js
-var Fetcher = require('stackable-fetcher');
+var Fetcher = require('stackable-fetcher').Fetcher;
 new Fetcher()
   .get('https://github.com/')
   .then(function(response) { return response.text(); })
@@ -31,11 +31,14 @@ stackable-fetcher is easily extended via middleware stack.
 - A middleware instance has `#call(environment)` property that returns a promise
 
 ### Example
-See [examples](/examples) for example middlewares.
-
 ```js
-new Fetcher()
-  .use(RequestLogger)
-  .use(ResponseLogger)
-  .get('https://api.github.com/users/r7kamura');
+var stackableFetcher = require('stackable-fetcher');
+var Fetcher = stackableFetcher.Fetcher;
+var RequestLogger = stackableFetcher.RequestLogger;
+var ResponseLogger = stackableFetcher.ResponseLogger;
+
+new Fetcher().
+  use(RequestLogger).
+  use(ResponseLogger).
+  get('https://api.github.com/users/r7kamura');
 ```
