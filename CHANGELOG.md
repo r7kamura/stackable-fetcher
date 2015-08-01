@@ -1,3 +1,6 @@
+## v0.1.5
+- Improve JsonResponseDecoder on empty response body
+
 ## v0.1.4
 - Fix RejectLogger bug
 
