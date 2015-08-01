@@ -35,7 +35,7 @@ stackable-fetcher is easily extended via middleware stack.
 - [JsonResponseDecoder](/src/json-response-decoder.js)
 - [RequestLogger](/src/request-logger.js)
 - [ResponseLogger](/src/response-logger.js)
-- [AwsSignerV4](https://github.com/r7kamura/aws-signer-v4)
+- [AwsSignerV4](https://github.com/r7kamura/stackable-fetcher-aws-signer-v4)
 
 ### Example usage
 ```js
