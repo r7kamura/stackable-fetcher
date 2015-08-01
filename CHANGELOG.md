@@ -1,3 +1,6 @@
+## v0.1.4
+- Fix RejectLogger bug
+
 ## v0.1.3
 - Add RejectLogger middleware
 
