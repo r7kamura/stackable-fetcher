@@ -4,10 +4,15 @@ var JsonResponseDecoder = function (application) {
 
 JsonResponseDecoder.prototype.call = function (environment) {
   return this.application.call(environment).then(function (response) {
-    if (response.headers.get('content-type') && response.headers.get('content-type').indexOf('json') > -1) {
-      return response.json();
+    var contentType = response.headers.get('content-type');
+    if (contentType && contentType.indexOf('json') > -1) {
+      if (response.headers.get('content-length') === '0') {
+        return null;
+      } else {
+        return response.json();
+      }
     } else {
-      return Promise.reject('The response does not have JSON Content-Type');
+      return response;
     }
   });
 };
