@@ -28,7 +28,7 @@ stackable-fetcher is easily extended via middleware stack.
 
 ### Specs
 - A middleware is a constructor function that takes an application and options
-- A middleware instance has `#call(environment)` property that returns a promise
+- A middleware instance has `#call(request)` property that returns a promise
 
 ### Example middlewares
 - [JsonRequestEncoder](/src/json-request-encoder.js)
