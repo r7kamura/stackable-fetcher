@@ -5,7 +5,7 @@ var RejectLogger = function (application) {
 RejectLogger.prototype.call = function (environment) {
   return this.application.call(environment).catch(function (error) {
     console.log(error);
-    return error;
+    return Promise.reject(error);
   });
 };
 
