@@ -30,7 +30,14 @@ stackable-fetcher is easily extended via middleware stack.
 - A middleware is a constructor function that takes an application and options
 - A middleware instance has `#call(environment)` property that returns a promise
 
-### Example
+### Example middlewares
+- [JsonRequestEncoder](/src/json-request-encoder.js)
+- [JsonResponseDecoder](/src/json-response-decoder.js)
+- [RequestLogger](/src/request-logger.js)
+- [ResponseLogger](/src/response-logger.js)
+- [AwsSignerV4](https://github.com/r7kamura/aws-signer-v4)
+
+### Example usage
 ```js
 var stackableFetcher = require('stackable-fetcher');
 var Fetcher = stackableFetcher.Fetcher;
