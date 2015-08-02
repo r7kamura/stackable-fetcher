@@ -1,4 +1,5 @@
-import { Fetcher } from '../src/index.js'
+import assert from 'assert'
+import { Fetcher, RequestLogger } from '../src/index.js'
 
 describe('Fetcher', () => {
   let fetcher = new Fetcher();
@@ -8,6 +9,12 @@ describe('Fetcher', () => {
       fetcher.get('http://example.com').then((response) => {
         done();
       });
+    });
+  });
+
+  describe('#use', () => {
+    it('returns a new Fetcher instance', () => {
+      assert(fetcher.use(RequestLogger) !== fetcher);
     });
   });
 });

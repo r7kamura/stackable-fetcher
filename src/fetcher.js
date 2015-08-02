@@ -12,8 +12,11 @@ import Request from './request'
  * });
  */
 export default class Fetcher {
-  constructor() {
-    this.adapter = {
+  /**
+   * @param {Object=} options
+   */
+  constructor(options) {
+    this.adapter = (options || {}).adapter || {
       call: function (environment) {
         return fetch(
           environment.url,
@@ -25,7 +28,7 @@ export default class Fetcher {
         );
       }
     };
-    this.middlewares = [];
+    this.middlewares = (options || {}).middlewares || [];
   }
 
   /**
@@ -104,8 +107,13 @@ export default class Fetcher {
    * @return {Fetcher}
    */
   use(middleware, options) {
-    this.middlewares.push({ middleware: middleware, options: options });
-    return this;
+    return new this.constructor({
+      adapter: this.adapter,
+      middlewares: this.middlewares.concat({
+        middleware: middleware,
+        options: options
+      })
+    });
   }
 
   /**
