@@ -1,5 +1,5 @@
 var fetch = require('node-fetch');
-var Request = require('./request')
+var Request = require('./request');
 
 /**
  * @class An HTTP Client

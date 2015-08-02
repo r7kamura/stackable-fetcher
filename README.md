@@ -33,6 +33,7 @@ stackable-fetcher is easily extended via middleware stack.
 ### Example middlewares
 - [JsonRequestEncoder](/src/json-request-encoder.js)
 - [JsonResponseDecoder](/src/json-response-decoder.js)
+- [Mock](/src/mock.js)
 - [RejectLogger](/src/reject-logger.js)
 - [RequestLogger](/src/request-logger.js)
 - [ResponseLogger](/src/response-logger.js)
