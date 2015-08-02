@@ -1,3 +1,6 @@
+## v0.1.6
+- Add Mock middleware
+
 ## v0.1.5
 - Improve JsonResponseDecoder on empty response body
 
