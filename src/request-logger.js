@@ -1,10 +1,10 @@
-var RequestLogger = function (application) {
-  this.application = application;
-};
+export default class RequestLogger {
+  constructor(application) {
+    this.application = application;
+  }
 
-RequestLogger.prototype.call = function (environment) {
-  console.log(environment);
-  return this.application.call(environment);
-};
-
-module.exports = RequestLogger;
+  call(environment) {
+    console.log(environment);
+    return this.application.call(environment);
+  }
+}

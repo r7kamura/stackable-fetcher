@@ -9,12 +9,10 @@ A middleware-based HTTP client library based on [node-fetch](https://github.com/
 
 ## Install
 ```
-npm install --save-dev stackable-fetcher
+npm install stackable-fetcher
 ```
 
 ## Usage
-See [docs](http://r7kamura.github.io/stackable-fetcher/) for more details.
-
 ```js
 var Fetcher = require('stackable-fetcher').Fetcher;
 new Fetcher()
