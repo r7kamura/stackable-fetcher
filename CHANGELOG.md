@@ -1,3 +1,6 @@
+## v0.3.0
+- Make Fetcher#use immutable
+
 ## v0.2.0
 - Use ES6 and babel
 
