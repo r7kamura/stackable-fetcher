@@ -1,3 +1,6 @@
+## v0.2.0
+- Use ES6 and babel
+
 ## v0.1.6
 - Add Mock middleware
 
