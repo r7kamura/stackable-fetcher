@@ -1,11 +1,11 @@
 import Fetcher from './fetcher'
-import JsonRequestEncoder from './json-request-encoder'
-import JsonResponseDecoder from './json-response-decoder'
-import Mock from './mock'
-import RejectLogger from './reject-logger'
+import JsonRequestEncoder from './middlewares/json-request-encoder'
+import JsonResponseDecoder from './middlewares/json-response-decoder'
+import Mock from './middlewares/mock'
+import RejectLogger from './middlewares/reject-logger'
 import Request from './request'
-import RequestLogger from './request-logger'
-import ResponseLogger from './response-logger'
+import RequestLogger from './middlewares/request-logger'
+import ResponseLogger from './middlewares/response-logger'
 
 export default Fetcher
 export {
