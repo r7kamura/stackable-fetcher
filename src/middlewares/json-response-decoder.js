@@ -4,17 +4,16 @@ export default class JsonResponseDecoder {
   }
 
   call(environment) {
-    return this.application.call(environment).then(function (response) {
-      var contentType = response.headers.get('content-type');
+    return this.application.call(environment).then((response) => {
+      const contentType = response.headers.get('content-type');
       if (contentType && contentType.indexOf('json') > -1) {
         if (response.headers.get('content-length') === '0') {
-          return null;
+          response.body = null;
         } else {
-          return response.json();
+          response.body = JSON.parse(response.body);
         }
-      } else {
-        return response;
       }
+      return response;
     });
   }
 }
