@@ -7,13 +7,14 @@ import Request from './request'
 import RequestLogger from './request-logger'
 import ResponseLogger from './response-logger'
 
-export default {
-  Fetcher: Fetcher,
-  JsonRequestEncoder: JsonRequestEncoder,
-  JsonResponseDecoder: JsonResponseDecoder,
-  Mock: Mock,
-  RejectLogger: RejectLogger,
-  Request: Request,
-  RequestLogger: RequestLogger,
-  ResponseLogger: ResponseLogger
+export default Fetcher
+export {
+  Fetcher,
+  JsonRequestEncoder,
+  JsonResponseDecoder,
+  Mock,
+  RejectLogger,
+  Request,
+  RequestLogger,
+  ResponseLogger
 }
