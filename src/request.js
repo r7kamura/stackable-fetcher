@@ -1,47 +1,42 @@
-import url from 'url'
+import urlParser from 'url'
 
 /**
  * @class A set of information about an HTTP request
  * @property {Array.<object>}
- * @property {string=} body
- * @property {object=} headers
- * @property {string} method
- * @property {object=} parameters
- * @property {object} url
+ * @property {String=} body
+ * @property {Object=} headers
+ * @property {String} method
+ * @property {Object=} parameters
+ * @property {String} url
  */
 export default class Request {
-  constructor(properties) {
-    this._body = properties.body;
-    this._headers = properties.headers || {};
-    this._method = properties.method;
-    this._parameters = properties.parameters || {};
-    this._url = properties.url;
+  constructor({ body, headers = {}, method, parameters = {}, url }) {
+    this.body = body;
+    this.headers = headers;
+    this.method = method;
+    this.parameters = parameters;
+    this.urlString = url;
   }
 
   /**
-   * @return {object}
+   * @return {String}
    */
-  toEnvironment() {
-    return {
-      body: this._body,
-      headers: this._headers,
-      method: this._method,
-      url: this._getUrl()
-    };
-  }
-
-  /**
-   * @private
-   * @return {string}
-   */
-  _getUrl() {
-    let urlObject = url.parse(this._url);
+  buildUrl() {
+    const urlObject = urlParser.parse(this.urlString);
     urlObject.search = null;
     urlObject.query = {};
-    let self = this;
-    Object.keys(this._parameters).forEach(function (key) {
-      urlObject.query[key] = self._parameters[key];
+    Object.keys(this.parameters).forEach((key) => {
+      urlObject.query[key] = this.parameters[key];
     });
-    return url.format(urlObject);
+    return urlParser.format(urlObject);
+  }
+
+  raw() {
+    return {
+      body: this.body,
+      headers: this.headers,
+      method: this.method,
+      url: this.buildUrl()
+    };
   }
 }

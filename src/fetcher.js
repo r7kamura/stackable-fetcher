@@ -112,15 +112,13 @@ export default class Fetcher {
    */
   process(method, url, body, headers, parameters) {
     return this.application.call(
-      new Request(
-        {
-          body,
-          headers,
-          method,
-          parameters,
-          url
-        }
-      ).toEnvironment()
+      new Request({
+        body,
+        headers,
+        method,
+        parameters,
+        url
+      }).raw()
     );
   }
 
