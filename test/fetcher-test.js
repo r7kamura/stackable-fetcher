@@ -2,7 +2,7 @@ import assert from 'assert'
 import { Fetcher, RequestLogger } from '../src/index.js'
 
 describe('Fetcher', () => {
-  let fetcher = new Fetcher();
+  const fetcher = new Fetcher();
 
   describe('#get', () => {
     it('sends GET request and returns Promise', (done) => {

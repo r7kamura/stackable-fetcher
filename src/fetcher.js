@@ -6,10 +6,10 @@ import Request from './request'
  * @property {Object} adapter
  * @property {Array.<object>} middlewares
  * @example
- * new Fetcher().get('https://github.com').then(function (response) {
- *   console.log(response.status);
- *   return response;
- * });
+ *   new Fetcher().get('https://github.com').then(function (response) {
+ *     console.log(response.status);
+ *     return response;
+ *   });
  */
 export default class Fetcher {
   /**
@@ -18,6 +18,28 @@ export default class Fetcher {
   constructor(options = {}) {
     this.adapter = options.adapter || new DefaultAdapter();
     this.middlewares = options.middlewares || [];
+  }
+
+  /**
+   * @return {Application}
+   */
+  get application() {
+    if (!this._application) {
+      this._application = this.buildApplication();
+    }
+    return this._application;
+  }
+
+  /**
+   * @return {Application}
+   */
+  buildApplication() {
+    return this.middlewares.reverse().reduce(
+      (application, { middleware, options }) => {
+        return new middleware(application, options);
+      },
+      this.adapter
+    );
   }
 
   /**
@@ -89,7 +111,7 @@ export default class Fetcher {
    * @return {Promise}
    */
   process(method, url, body, headers, parameters) {
-    return this._getApplication().call(
+    return this.application.call(
       new Request(
         {
           body,
@@ -125,31 +147,5 @@ export default class Fetcher {
         options: options
       })
     });
-  }
-
-  /**
-   * @private
-   * @param {Object}
-   * @return {Object}
-   */
-  _buildApplication(request) {
-    let application = this.adapter;
-    let i = this.middlewares.length;
-    while (i--) {
-      application = new this.middlewares[i].middleware(
-        application,
-        this.middlewares[i].options
-      );
-    }
-    return application;
-  }
-
-  /**
-   * @private
-   * @return {Object}
-   */
-  _getApplication() {
-    this._application = this._application || this._buildApplication();
-    return this._application;
   }
 }
