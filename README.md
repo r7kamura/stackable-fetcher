@@ -20,7 +20,7 @@ This class has `#get`, `#post`, `#delete` and other HTTP methods that return `Pr
 import Fetcher from 'stackable-fetcher'
 
 const fetcher = new Fetcher();
-fetcher.get('https://github.com/').then(({ body, headers, status  }) => {
+fetcher.get('https://github.com/').then(({ body, headers, status }) => {
   console.log(body);
 });
 ```
