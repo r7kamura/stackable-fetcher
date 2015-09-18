@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import DefaultAdapter from './default_adapter'
 import Request from './request'
 
 /**
@@ -15,20 +15,9 @@ export default class Fetcher {
   /**
    * @param {Object=} options
    */
-  constructor(options) {
-    this.adapter = (options || {}).adapter || {
-      call: function (environment) {
-        return fetch(
-          environment.url,
-          {
-            body: environment.body,
-            headers: environment.headers,
-            method: environment.method
-          }
-        );
-      }
-    };
-    this.middlewares = (options || {}).middlewares || [];
+  constructor(options = {}) {
+    this.adapter = options.adapter || new DefaultAdapter();
+    this.middlewares = options.middlewares || [];
   }
 
   /**

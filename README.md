@@ -13,12 +13,16 @@ npm install stackable-fetcher
 ```
 
 ## Usage
+`stackable-fetcher` provides `Fetcher` class.
+This class has `#get`, `#post`, `#delete` and other HTTP methods that return `Promise`.
+
 ```js
-var Fetcher = require('stackable-fetcher').Fetcher;
-new Fetcher()
-  .get('https://github.com/')
-  .then(function(response) { return response.text(); })
-  .then(function(body) { console.log(body); });
+import Fetcher from 'stackable-fetcher'
+
+const fetcher = new Fetcher();
+fetcher.get('https://github.com/').then(({ body, headers, status  }) => {
+  console.log(body);
+});
 ```
 
 ## Middleware
@@ -39,13 +43,10 @@ stackable-fetcher is easily extended via middleware stack.
 
 ### Example usage
 ```js
-var stackableFetcher = require('stackable-fetcher');
-var Fetcher = stackableFetcher.Fetcher;
-var RequestLogger = stackableFetcher.RequestLogger;
-var ResponseLogger = stackableFetcher.ResponseLogger;
+import { Fetcher, RequestLogger, ResponseLogger } from 'stackable-fetcher'
 
-new Fetcher().
-  use(RequestLogger).
-  use(ResponseLogger).
-  get('https://api.github.com/users/r7kamura');
+new Fetcher()
+  .use(RequestLogger)
+  .use(ResponseLogger)
+  .get('https://api.github.com/users/r7kamura');
 ```
