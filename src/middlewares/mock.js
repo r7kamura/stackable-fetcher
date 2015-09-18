@@ -1,4 +1,4 @@
-import { Headers, Response } from 'node-fetch'
+import { Headers, Response } from 'isomorphic-fetch'
 import stream from 'stream'
 
 export default class Mock {

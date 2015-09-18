@@ -14,7 +14,8 @@
     "lib"
   ],
   "dependencies": {
-    "node-fetch": "^1.3.2"
+    "isomorphic-fetch": "^2.1.1",
+    "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
     "aws-signer-v4": "0.0.1",
