@@ -1,3 +1,7 @@
+## v0.4.0
+- Change response interface
+- Allow users to `import Fetcher from 'stackable-fetcher'`
+
 ## v0.3.0
 - Make Fetcher#use immutable
 
