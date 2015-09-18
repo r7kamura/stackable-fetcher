@@ -27,7 +27,7 @@ export default class Fetcher {
    * @return {Promise}
    */
   delete(url, parameters, headers) {
-    return this._process('DELETE', url, null, headers, parameters);
+    return this.process('DELETE', url, null, headers, parameters);
   }
 
   /**
@@ -37,7 +37,7 @@ export default class Fetcher {
    * @return {Promise}
    */
   get(url, parameters, headers) {
-    return this._process('GET', url, null, headers, parameters);
+    return this.process('GET', url, null, headers, parameters);
   }
 
   /**
@@ -47,7 +47,7 @@ export default class Fetcher {
    * @return {Promise}
    */
   head(url, parameters, headers) {
-    return this._process('HEAD', url, null, headers, parameters);
+    return this.process('HEAD', url, null, headers, parameters);
   }
 
   /**
@@ -57,7 +57,7 @@ export default class Fetcher {
    * @return {Promise}
    */
   options(url, body, headers) {
-    return this._process('OPTIONS', url, body, headers);
+    return this.process('OPTIONS', url, body, headers);
   }
 
   /**
@@ -67,7 +67,7 @@ export default class Fetcher {
    * @return {Promise}
    */
   patch(url, body, headers) {
-    return this._process('PATCH', url, body, headers);
+    return this.process('PATCH', url, body, headers);
   }
 
   /**
@@ -77,7 +77,29 @@ export default class Fetcher {
    * @return {Promise}
    */
   post(url, body, headers) {
-    return this._process('POST', url, body, headers);
+    return this.process('POST', url, body, headers);
+  }
+
+  /**
+   * @param {String}
+   * @param {String}
+   * @param {String=}
+   * @param {Object=}
+   * @param {Object=}
+   * @return {Promise}
+   */
+  process(method, url, body, headers, parameters) {
+    return this._getApplication().call(
+      new Request(
+        {
+          body,
+          headers,
+          method,
+          parameters,
+          url
+        }
+      ).toEnvironment()
+    );
   }
 
   /**
@@ -87,7 +109,7 @@ export default class Fetcher {
    * @return {Promise}
    */
   put(url, body, headers) {
-    return this._process('PUT', url, body, headers);
+    return this.process('PUT', url, body, headers);
   }
 
   /**
@@ -129,28 +151,5 @@ export default class Fetcher {
   _getApplication() {
     this._application = this._application || this._buildApplication();
     return this._application;
-  }
-
-  /**
-   * @private
-   * @param {String}
-   * @param {String}
-   * @param {String=}
-   * @param {Object=}
-   * @param {Object=}
-   * @return {Promise}
-   */
-  _process(method, url, body, headers, parameters) {
-    return this._getApplication().call(
-      new Request(
-        {
-          body: body,
-          headers: headers,
-          method: method,
-          parameters: parameters,
-          url: url
-        }
-      ).toEnvironment()
-    );
   }
 }
